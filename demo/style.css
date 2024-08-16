@@ -1,0 +1,49 @@
+.demo {
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-direction giúp đảo chiều của trục trong flex */
+    flex-direction: column;
+
+}
+
+/* .demo1 {
+    background-color: red;
+    width: 150px;
+    height: 150px;
+}
+
+.demo2 {
+    background-color: pink;
+    width: 150px;
+    height: 150px;
+}
+
+.demo3 {
+    background-color: green;
+    width: 150px;
+    height: 150px;
+}
+
+.demo4 {
+    background-color: orange;
+    width: 150px;
+    height: 150px;
+} */
+
+
+
+/* Khi dùng before hoặc after, khi truyền width và height thì bắt buộc phải có thêm 1 trong 2 thuộc tính display block hoặc inline-block */
+.demo1::before {
+    content: "";
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+
+.demo1::after {
+    content: "";
+}

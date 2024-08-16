@@ -1,0 +1,570 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto; /* Canh giữa phần tử */
+}
+
+.banner,
+.service_title,
+.post_title,
+.number,
+.digital_title,
+.contact_title {
+  margin-top: 86px;
+}
+
+/* html {
+  scroll-behavior: smooth;
+  } */
+
+/* Header */
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* bottom: 0; */
+  /* background-color: #000; */
+  padding: 20px 0;
+  color: #fff;
+  border-bottom: 1px solid #ffffff4e;
+  z-index: 1000;
+  /* background-color: rgb(22 22 23 / 80%); */
+  background-color: #000;
+}
+
+.header_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.header_content nav ul {
+  list-style: none;
+}
+
+.header_content nav ul li {
+  display: inline;
+  padding: 0 26px;
+}
+
+.header_content nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 17px;
+  /* transition: color 1s; */
+  transition: all 0.5s;
+}
+
+.header_content nav ul li a:hover {
+  color: #e62b4a;
+}
+
+header nav ul .active a {
+  color: #e62b4a;
+}
+
+/* Banner */
+
+.banner {
+  background-image: url(./../img/home_slider.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.banner .sub_title {
+  font-size: 25px;
+}
+
+.banner h1 {
+  font-size: 75px;
+  line-height: 90px;
+}
+
+.banner button {
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px 25px;
+  margin: 10px 0;
+  background-color: #e62b4a;
+  color: #fff;
+  border: 1px solid #e62b4a;
+  text-transform: uppercase;
+  transition: all 0.5s;
+}
+
+.banner button:hover {
+  background-color: #af2239;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.banner i {
+  /* animation-name gọi tới animation cần chạy */
+  animation-name: arrow_go_down;
+  /* animation-duration giúp xác định thời gian từ lúc bắt đầu đến lúc kết thúc là bao nhiêu giấy */
+  animation-duration: 1s;
+  /* animation-iteration-count giúp xác định số lần lặp lại (infinite giúp lặp lại vô tận  */
+  animation-iteration-count: infinite;
+
+  /* animation-fill-mode: ;  */
+}
+
+/* Services */
+
+.service {
+  background-color: #000;
+  padding: 90px 0;
+  text-align: center;
+  color: white;
+}
+
+.service .service_title .sub_title,
+.digital .digital_title .sub_title {
+  color: #e62b4a;
+  font-weight: 400 !important;
+}
+
+.service .service_title h2,
+.digital .digital_title h2 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.service .service_title .content_title,
+.digital .digital_title .content_title {
+  color: #888888;
+  font-weight: 700;
+  margin: 10px 0 20px 0;
+}
+
+.service .service_item {
+  padding: 0 10px;
+}
+
+.service .service_item .item_bg {
+  position: relative;
+  background-color: white;
+  padding: 60px 60px;
+  color: #000;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.service .service_item i {
+  font-size: 48px;
+}
+
+.service .service_item p {
+  font-size: 14px;
+}
+
+.service .service_item i,
+.service .service_item p {
+  opacity: 0.5;
+}
+
+.service .service_item .item_bg::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 5px;
+  height: 0;
+  background-color: #e62b4a;
+  right: 0;
+  top: 0;
+  transition: all 0.5s;
+}
+
+.service .service_item .item_bg:hover::before {
+  height: 100%;
+}
+
+/* nên dùng một class cha của phần bố cục cần chỉnh sửa bọc lại đoạn selector vì làm vậy sẽ không ảnh hưởng tới tất cả các thành phần bên dưới  */
+
+.service .slick-dots {
+  /* margin-top: 20px; */
+  bottom: -55px;
+}
+
+.service .slick-dots li button:before {
+  font-size: 15px;
+  color: white;
+}
+
+.service .slick-dots .slick-active button::before {
+  color: #e62b4a;
+}
+
+/* Post */
+
+.post {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.post .post_title .sub_title {
+  color: #888888;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.post .post_title h2 {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.post .post_title p {
+  color: #888888;
+  font-weight: 600;
+}
+
+/* Post content */
+
+.post .post_content {
+  display: grid;
+  /* grid-template-columns giúp chia cột trong thuộc tính display grid */
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-rows: repeat(4,500px); */
+
+  /* thuộc tính gap giúp tạo khoảng cách giữa cá cột và các dòng */
+  gap: 30px;
+}
+
+.post .post_content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(50%) brightness(80%); /* chỉnh sữa lại hình ảnh */
+}
+
+.post .post_content .post_item:first-child {
+  /* grid-column giúp hợp nhất các cột, truyền vào giá trị đầu tiên sẽ là vị trí cột muốn hợp nhất và giá trị sau sẽ là số cột muốn hợp nhất */
+  grid-column: 1 / span 2;
+  /* grid-row giúp hợp nhất các dòng, truyền vào giá trị đầu tiên sẽ là vị trí dòng muốn hợp nhất và giá trị sau sẽ là số dòng muốn hợp nhất */
+  grid-row: 1 / span 2;
+}
+
+.post .post_content .post_item:last-child {
+  grid-column: 3 / span 2;
+  grid-row: 3 / span 2;
+}
+
+/* Create Overlay */
+
+.post .post_content .post_item {
+  position: relative;
+  overflow: hidden;
+}
+
+.post .post_item .overlay {
+  position: absolute;
+  background-color: rgb(230 43 74 / 60%);
+  top: 0;
+  left: 0;
+  /* bottom: 0;
+    right: 0; */
+  /*Sử dụng 4 thuộc tính trên tương đương với việc dùng 2 trong 4 giá trị với width và height là 100%*/
+  width: 100%;
+  height: 100%;
+
+  /* ---------------------------- */
+  /* Cách 1 : sử dụng thuộc tính display flex */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+
+  /* Ẩn overlay */
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.post .post_item:hover .overlay {
+  opacity: 1;
+}
+
+.overlay .overlay_icon {
+  text-align: right;
+
+  /* Cách 2: dùng postion absolute cho cái overlay con  */
+  /* position: absolute;
+    top: 20px;
+    right: 20px; */
+}
+
+.overlay .overlay_text {
+  text-align: left;
+  text-transform: uppercase;
+  /* position: absolute;
+    bottom: 20px;
+    left: 20px; */
+}
+
+.overlay .overlay_icon i {
+  /* Cách 1 */
+  /* width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background-color: #fff; */
+
+  /* Cách 2 */
+  padding: 10px;
+  background-color: #fff;
+  transition: all 0.8s;
+
+  /* transform khi nhận giá trị translate sẽ giúp dịch chuyển phần tử html theo 2 chiều là ngang và dọc */
+  /* transform: translate(-200px, 200px) scale(2) rotate(45deg); */
+  transform: translateY(20px);
+}
+
+.post .post_item:hover .overlay_icon i {
+  transform: translateY(0);
+}
+
+.overlay .overlay_icon i:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.post .post_item .overlay_text {
+  transform: translateY(20px);
+  transition: all 0.8s;
+}
+
+.post .post_item:hover .overlay_text {
+  transform: translateY(0);
+}
+
+.overlay .overlay_text p {
+  font-size: 14px;
+  color: #d0c7c8;
+}
+
+.overlay .overlay_text h3 {
+  font-size: 18px;
+  color: #fff;
+}
+
+.fancybox__content {
+  /* width: 784px;
+  height: 588px; */
+  width: 100%;
+  height: 100%;
+}
+
+/* Number */
+
+.number {
+  background-color: #000;
+  color: #fff;
+  padding: 106px 0;
+  text-align: center;
+}
+
+.number .number_content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.number .number_content h3 {
+  font-size: 60px;
+  font-weight: 300;
+}
+
+.number .number_content p {
+  font-size: 20px;
+  color: #888888;
+}
+
+/* DIGITAL */
+
+.digital {
+  padding: 90px 0;
+  text-align: center;
+  background-image: url(./../img/bussiness_img_1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-attachment giúp làm tấm hình không bị di chuyển theo khi scroll */
+  background-attachment: fixed;
+}
+
+/* CONTACT */
+
+.contact {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.contact .contact_title h2 {
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.contact .contact_title p {
+  font-size: 16px;
+  color: #888888;
+  font-weight: 400;
+  margin: 20px 0;
+}
+
+.contact .contact_content {
+  display: flex;
+}
+
+.contact .contact_content .content_left {
+  width: 60%;
+}
+
+.contact .contact_content .content_right {
+  width: 40%;
+  padding-left: 10px;
+}
+
+.contact .contact_content .content_right form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact .contact_content .content_right input,
+.contact .contact_content .content_right textarea,
+.contact .contact_content .content_right button {
+  /* display: block; */
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #ccc;
+}
+
+.contact .contact_content .content_right button {
+  background-color: #000;
+  color: #fff;
+  transition: all 0.5s;
+}
+
+.contact .contact_content .content_right button:hover {
+  background-color: #e62b4a;
+}
+
+.contact .contact_content .content_right input,
+.contact .contact_content .content_right button {
+  border-radius: 50px;
+}
+
+.contact .contact_content .content_right textarea {
+  border-radius: 12px;
+}
+
+.contact .contact_content .content_right input::placeholder,
+.contact .contact_content .content_right textarea::placeholder,
+.contact .contact_content .content_right button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+/* FOOTER */
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 100px 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer p {
+  font-size: 14px;
+}
+
+.footer .icon_social {
+  display: flex;
+}
+
+.footer .icon_social div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  background: #353333;
+  padding: 16px;
+  margin: 0 5px;
+  border-radius: 50%;
+  font-size: 16px;
+  transition: all 0.5s;
+}
+
+.footer .icon_social div:hover {
+  background-color: #e62b4a;
+}
+
+/* BACK TO TOP */
+
+.back_to_top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: black;
+  opacity: 0.6 !important;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* STYLE OF BUTTON BACK TO TOP */
+
+.cd-top--is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* .cd-top--fade-out {
+  opacity: 0.5;
+} */
+
+@keyframes arrow_go_down {
+  /* from thể hiện các thuộc tính gắn vào khi bắt đầu animation */
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* to thể hiện khi animation các thuộc tính gì sẽ diễn ra khi kết thúc*/
+  to {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
